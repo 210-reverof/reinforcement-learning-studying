@@ -31,6 +31,8 @@ class GraphicDisplay(tk.Tk):
         self.text_reward(2, 2, "R : 1.0")
         self.text_reward(1, 2, "R : -1.0")
         self.text_reward(2, 1, "R : -1.0")
+        self.print_value_table(self.agent.value_table)
+        
 
     def _build_canvas(self):
         canvas = tk.Canvas(self, bg='white',
@@ -47,7 +49,7 @@ class GraphicDisplay(tk.Tk):
         policy_button.configure(width=10, activebackground="#33B5E5")
         canvas.create_window(WIDTH * UNIT * 0.37, HEIGHT * UNIT + 10,
                              window=policy_button)
-        policy_button = Button(self, text="move", command=self.move_by_policy)
+        #policy_button = Button(self, text="move", command=self.move_by_policy)
         policy_button.configure(width=10, activebackground="#33B5E5")
         canvas.create_window(WIDTH * UNIT * 0.62, HEIGHT * UNIT + 10,
                              window=policy_button)
